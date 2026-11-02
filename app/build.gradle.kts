@@ -12,8 +12,8 @@ android {
         applicationId = "com.khahdihdz.callerid"
         minSdk = 28
         targetSdk = 35
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = System.getenv("APP_VERSION_CODE")?.toIntOrNull() ?: 1
+        versionName = System.getenv("APP_VERSION_NAME") ?: "0.1.0"
     }
     signingConfigs {
         create("release") {
