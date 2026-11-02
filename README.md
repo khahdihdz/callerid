@@ -8,7 +8,7 @@
 
 ## Build
 
-Mở project bằng Android Studio hoặc chạy `./gradlew assembleDebug` với JDK 17 và Android SDK phù hợp.
+Mở project bằng Android Studio hoặc chạy `gradle assembleDebug` với JDK 17, Gradle 8.9 và Android SDK Platform 35.
 
 ## APK signing
 
