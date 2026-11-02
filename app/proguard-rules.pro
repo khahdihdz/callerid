@@ -1,0 +1,2 @@
+-keep class com.khahdihdz.callerid.platform.** { *; }
+-keep class * extends android.telecom.CallScreeningService { *; }
