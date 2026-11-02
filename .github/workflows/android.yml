@@ -22,12 +22,13 @@ jobs:
           java-version: "17"
       - uses: android-actions/setup-android@v3
       - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
       - name: Unit tests and lint
         run: |
-          chmod +x gradlew
-          ./gradlew testDebugUnitTest lintDebug
+          gradle testDebugUnitTest lintDebug
       - name: Build debug APK
-        run: ./gradlew assembleDebug
+        run: gradle assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: callerid-debug
@@ -64,7 +65,7 @@ jobs:
           test -n "$ANDROID_SIGNING_STORE_PASSWORD"
           test -n "$ANDROID_SIGNING_KEY_ALIAS"
           test -n "$ANDROID_SIGNING_KEY_PASSWORD"
-          ./gradlew assembleRelease
+          gradle assembleRelease
       - name: Verify APK signature
         run: |
           set -euo pipefail
